@@ -8,9 +8,7 @@ Add the following to your docker-compose.yml file:
 
 ```YAML
 backup:
-    build: .
-    volumes:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+    image: yappabe/mysql-backup
     links:
         - mysql
     environment:
