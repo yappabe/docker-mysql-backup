@@ -4,7 +4,7 @@ set -e
 
 . /etc/environment
 DIR=$(mktemp -d)
-TS=$(date +%_d_%m_%Y_%H_%M)
+TS=$(date +%d_%m_%Y_%H_%M)
 
 if [ -z "$DBS" ]
 then
