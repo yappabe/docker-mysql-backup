@@ -8,11 +8,11 @@ TS=$(date +%d_%m_%Y_%H_%M)
 
 if [ -z "$DBS" ]
 then
-	mysqldump -u$MYSQL_USERNAME -p$MYSQL_PASSWORD -hmysql --all-databases | gzip > $DIR/all-databases-$TS.sql.gz
+	mysqldump -u$MYSQL_USERNAME -p$MYSQL_PASSWORD -h$MYSQL_HOST --all-databases | gzip > $DIR/all-databases-$TS.sql.gz
 else
 	for DB in $DBS
 	do
-		mysqldump -u$MYSQL_USERNAME -p$MYSQL_PASSWORD -hmysql $DB | gzip > $DIR/$DB-$TS.sql.gz
+		mysqldump -u$MYSQL_USERNAME -p$MYSQL_PASSWORD -h$MYSQL_HOST $DB | gzip > $DIR/$DB-$TS.sql.gz
 	done
 fi
 

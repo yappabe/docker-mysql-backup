@@ -8,7 +8,8 @@ RUN apt-get update -q && \
 
 COPY backup.sh run.sh /
 
-ENV CRON_TIME="0 1,9,17 * * *" DBS="" MYSQL_PASSWORD="root" MYSQL_USERNAME="root"
+ENV CRON_TIME="0 1,9,17 * * *" DBS="" MYSQL_PASSWORD="root" MYSQL_USERNAME="root" MYSQL_HOST="mysql"
 ENV RSYNC_COMMAND="rsync -avz -e \"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\" %DIR% user@remote:/"
+
 
 CMD ["/run.sh"]
