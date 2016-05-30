@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Joeri Verdeyen <joeriv@yappa.be>
 
 RUN apt-get update -q && \
-    apt-get install -qy cron mysql-client rsync ssh && \
+    apt-get install -qy cron mysql-client rsync ssh curl && \
     apt-get clean -q
 
 COPY backup.sh run.sh /
