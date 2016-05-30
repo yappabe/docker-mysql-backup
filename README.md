@@ -15,6 +15,7 @@ backup:
         DBS: db1
         MYSQL_USERNAME: mysqlusername
         MYSQL_PASSWORD: mysqlpassword
+        MYSQL_HOST: mysql
         RSYNC_COMMAND: "rsync -avz -e \"ssh -p 2122 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\" %DIR%/* user@host:/backup_path"
         CRON_TIME: "0 17 * * *"
 ```
