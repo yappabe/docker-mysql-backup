@@ -18,6 +18,11 @@ backup:
         MYSQL_HOST: mysql
         RSYNC_COMMAND: "rsync -avz -e \"ssh -p 2122 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\" %DIR%/* user@host:/backup_path"
         CRON_TIME: "0 17 * * *"
+        NOTIFICATION_SERVICE: slack
+        SLACK_HOOK_URL: "https://hooks.slack.com/services/XXXXXXX/XXXXXXX/XXXXXXXXXXXXXX"
+        SLACK_CHANNEL: "#general"
+        SLACK_USERNAME: "container-mysql-backup"
+        SLACK_EMOJI: "package"
 ```
 
 ### The container isn't authorized to access the remote server

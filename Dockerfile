@@ -9,7 +9,11 @@ RUN apt-get update -q && \
 COPY backup.sh run.sh /
 
 ENV CRON_TIME="0 1,9,17 * * *" DBS="" MYSQL_PASSWORD="root" MYSQL_USERNAME="root" MYSQL_HOST="mysql"
+ENV NOTIFICATION_SERVICE=""
+ENV SLACK_HOOK_URL="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+ENV SLACK_CHANNEL="#monit"
+ENV SLACK_USERNAME="container-mysql-backup"
+ENV SLACK_EMOJI="package"
 ENV RSYNC_COMMAND="rsync -avz -e \"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\" %DIR% user@remote:/"
-
 
 CMD ["/run.sh"]
